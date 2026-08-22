@@ -1,0 +1,18 @@
+
+> sentrion-frontend@0.1.0 dev
+> next dev --hostname 127.0.0.1
+
+▲ Next.js 16.2.12 (Turbopack)
+- Local:         http://127.0.0.1:3000
+- Network:       http://127.0.0.1:3000
+- Environments: .env.local
+✓ Ready in 6.7s
+Creating turbopack project {
+  dir: 'D:\\Desktop\\mul.agent orchestor\\sentrion-frontend',
+  testMode: true
+}
+
+○ Compiling / ...
+ GET / 200 in 14.1s (next.js: 13.8s, application-code: 296ms)
+ GET / 200 in 84ms (next.js: 5ms, application-code: 79ms)
+[?25h
