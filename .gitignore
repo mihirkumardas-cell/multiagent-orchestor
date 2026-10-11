@@ -1,2 +1,50 @@
-# Created by venv; see https://docs.python.org/3/library/venv.html
-*
+# Environments and secrets
+.env
+.env.*
+*.env
+!.env.example
+!*.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv/
+*/venv/
+backend/venv/
+*.egg-info/
+dist/
+build/
+
+# Node / Frontend
+node_modules/
+*/node_modules/
+.next/
+*/.next/
+out/
+.pnpm-store/
+
+# Databases and runtime data
+*.db
+*.sqlite3
+backend/data/chroma_db/
+backend/data/*.db
+backend/data/*.sqlite3
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS and Editor
+*.zip
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

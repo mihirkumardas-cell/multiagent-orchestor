@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <defs>
+    <!-- Dark background -->
+    <radialGradient id="bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#0a0e1a"/>
+    </radialGradient>
+
+    <!-- Shield gradient: deep navy → vivid blue → cyan -->
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="45%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+
+    <!-- Inner gradient: blue → cyan -->
+    <linearGradient id="innerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#93c5fd"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+
+    <!-- Outer glow filter -->
+    <filter id="outerGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="0 0 0 0 0.15
+                0 0 0 0 0.39
+                0 0 0 0 0.92
+                0 0 0 1 0" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Inner glow filter -->
+    <filter id="innerGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Pupil glow -->
+    <filter id="pupilGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Dark round background -->
+  <circle cx="40" cy="40" r="39" fill="url(#bg)"/>
+
+  <!-- Outer hex shield with glow -->
+  <path
+    d="M40 7L68 21V54L40 72L12 54V21L40 7Z"
+    fill="url(#shieldGrad)"
+    opacity="0.92"
+    filter="url(#outerGlow)"
+  />
+
+  <!-- Inner hex cavity -->
+  <path
+    d="M40 17L61 28V50L40 63L19 50V28L40 17Z"
+    fill="rgba(10,14,26,0.78)"
+    stroke="url(#innerGrad)"
+    stroke-width="1.2"
+  />
+
+  <!-- Eye shape -->
+  <path
+    d="M24 40C24 40 30 31 40 31C50 31 56 40 56 40C56 40 50 49 40 49C30 49 24 40 24 40Z"
+    fill="none"
+    stroke="url(#innerGrad)"
+    stroke-width="1.6"
+    filter="url(#innerGlow)"
+  />
+
+  <!-- Iris ring -->
+  <circle cx="40" cy="40" r="7" fill="url(#innerGrad)" opacity="0.9" filter="url(#innerGlow)"/>
+
+  <!-- Pupil -->
+  <circle cx="40" cy="40" r="3" fill="#0a0e1a"/>
+
+  <!-- Pupil highlight -->
+  <circle cx="38.5" cy="38.5" r="1" fill="rgba(255,255,255,0.55)"/>
+
+  <!-- Corner accent lines -->
+  <line x1="19" y1="28" x2="25" y2="31" stroke="#93c5fd" stroke-width="1.2" opacity="0.7"/>
+  <line x1="61" y1="28" x2="55" y2="31" stroke="#93c5fd" stroke-width="1.2" opacity="0.7"/>
+  <line x1="19" y1="50" x2="25" y2="47" stroke="#93c5fd" stroke-width="1.2" opacity="0.7"/>
+  <line x1="61" y1="50" x2="55" y2="47" stroke="#93c5fd" stroke-width="1.2" opacity="0.7"/>
+</svg>
